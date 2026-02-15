@@ -38,7 +38,7 @@ export default defineThemeConfig({
 
   /* 页脚 */
   footer: {
-    message: `Powered by <a target="_blank" href="https://v2.vuepress.vuejs.org/">VuePress</a> & <a target="_blank" href="https://theme-plume.vuejs.press">vuepress-theme-plume</a> | Copyright © 2025-${currentYear} 黎泽懿_Aionflux`,
+    message: `Powered by <a target="_blank" href="https://v2.vuepress.vuejs.org/">VuePress</a> & <a target="_blank" href="https://theme-plume.vuejs.press">vuepress-theme-plume</a> | Copyright © 2026-${currentYear} 黎泽懿_Aionflux`,
   },
 
   navbar,
