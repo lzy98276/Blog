@@ -77,15 +77,25 @@ export default {
     }
   },
   async mounted() {
+    this.loadLanguageColors()
+    
+    const fetchRepo = async (url) => {
+      const response = await fetch(url)
+      if (!response.ok) throw new Error(`HTTP ${response.status}`)
+      return await response.json()
+    }
+
     try {
-      this.loadLanguageColors()
-      const response = await fetch(
-        `https://api.github.com/repos/${this.owner}/${this.repo}`
-      )
-      if (!response.ok) throw new Error('Failed to fetch repository data')
-      this.repoData = await response.json()
-    } catch (err) {
-      this.error = err.message
+      // Try proxy first
+      this.repoData = await fetchRepo(`https://gh.llkk.cc/https://api.github.com/repos/${this.owner}/${this.repo}`)
+    } catch (e) {
+      console.warn('Proxy fetch failed, trying direct...', e)
+      try {
+        // Fallback to direct
+        this.repoData = await fetchRepo(`https://api.github.com/repos/${this.owner}/${this.repo}`)
+      } catch (err) {
+        this.error = 'Failed to fetch: ' + err.message
+      }
     } finally {
       this.loading = false
     }

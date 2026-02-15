@@ -2,6 +2,7 @@
 pageLayout: friends
 title: 友情链接
 editLink: false
+comment: false
 cols: 3
 groups:
   # - title: 个人
