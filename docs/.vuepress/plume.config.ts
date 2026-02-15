@@ -1,23 +1,66 @@
 import { defineThemeConfig } from 'vuepress-theme-plume'
 import navbar from './navbar'
 
+const currentYear = new Date().getFullYear()
+
 export default defineThemeConfig({
-  logo: 'https://github.com/lzy98276.png',
-  appearance: true,  // Dark mode switch
-  profile: {
-    name: '黎泽懿_Aionflux',
-    description: '科技爱好者 | 开源贡献者',
-    avatar: 'https://github.com/lzy98276.png',
-    circle: true,
-    location: 'China',
-    organization: 'Aionflux',
-  },
+  logo: '/lzy.ico',
+  appearance: true,
   social: [
-    { icon: 'github', link: 'https://github.com/lzy98276' },
+    { icon: 'github', link: 'https://github.com/lzy98276/Blog' },
+    { icon: 'bilibili', link: 'https://space.bilibili.com/520571577' },
+    {
+      icon: {
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m20 8l-8 5l-8-5V6l8 5l8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"/></svg>',
+        name: 'email'
+      },
+      link: 'mailto:lzy.12@foxmail.com'
+    },
+    { icon: 'rss', link: '/rss.xml' },
   ],
-  navbar,
+  navbarSocialInclude: ['github', 'bilibili', 'rss'], // 允许显示在导航栏的 social 社交链接
+  // aside: true, // 页内侧边栏， 默认显示在右侧
+  // outline: [2, 3], // 页内大纲， 默认显示 h2, h3
+  copyright: { 
+    license: {
+      name: 'MIT',
+      url: 'https://github.com/lzy98276/Blog/blob/main/LICENSE'
+    },
+    author: {
+      name: '黎泽懿_Aionflux',
+      url: 'https://github.com/lzy98276'
+    },
+    creation: 'original'
+  },
+  // prevPage: true,   // 是否启用上一页链接
+  // nextPage: true,   // 是否启用下一页链接
+  // createTime: true, // 是否显示文章创建时间
+
+  /* 页脚 */
   footer: {
-    message: 'Powered by VuePress & Plume',
-    copyright: '© 2026 黎泽懿_Aionflux',
+    message: `Powered by <a target="_blank" href="https://v2.vuepress.vuejs.org/">VuePress</a> & <a target="_blank" href="https://theme-plume.vuejs.press">vuepress-theme-plume</a> | Copyright © 2025-${currentYear} 黎泽懿_Aionflux`,
+  },
+
+  navbar,
+  collections: [ 
+    { type: 'post', dir: 'blog', title: '博客', meta: { createTime: "long" } }
+  ],
+
+  /**
+   * 公告板
+   * @see https://theme-plume.vuejs.press/guide/features/bulletin/
+   */
+  // bulletin: {
+  //   layout: 'top-right',
+  //   contentType: 'markdown',
+  //   title: '公告板标题',
+  //   content: '公告板内容',
+  // },
+
+  /* 过渡动画 @see https://theme-plume.vuejs.press/config/basic/#transition */
+  transition: {
+  //   page: true,        // 启用 页面间跳转过渡动画
+  //   postList: true,    // 启用 博客文章列表过渡动画
+    appearance: 'circle-clip',  // 启用 深色模式切换过渡动画, 或配置过渡动画类型
   },
 })

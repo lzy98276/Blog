@@ -1,0 +1,20 @@
+{
+  "techStack": [
+    {
+      "icon": "material-icon-theme:python",
+      "name": "Python"
+    },
+    {
+      "icon": "material-icon-theme:markdown",
+      "name": "Markdown"
+    },
+    {
+      "icon": "material-icon-theme:vue",
+      "name": "Vue"
+    },
+    {
+    "icon": "devicon:git",
+    "name": "Git"
+    }
+  ]
+}

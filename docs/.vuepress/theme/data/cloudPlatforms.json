@@ -1,0 +1,12 @@
+{
+  "cloudPlatforms": [
+    {
+      "icon": "logos:netlify-icon",
+      "name": "Netlify"
+    },
+    {
+      "icon": "logos:cloudflare-icon",
+      "name": "Cloudflare"
+    }
+  ]
+}

@@ -1,30 +1,39 @@
 {
   "name": "blog",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type": "module",
+  "packageManager": "pnpm@10.29.3",
+  "author": "黎泽懿_Aionflux <lzy.12@foxmail.com>",
+  "license": "MIT",
   "scripts": {
+    "docs:build": "vuepress build docs --clean-cache --clean-temp",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docs:dev-clean": "vuepress dev docs --clean-cache --clean-temp",
+    "docs:preview": "http-server docs/.vuepress/dist",
+    "vp-update": "pnpm dlx vp-update"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lzy98276/Blog.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lzy98276/Blog/issues"
-  },
-  "homepage": "https://github.com/lzy98276/Blog#readme",
   "devDependencies": {
-    "@vuepress/bundler-vite": "^2.0.0-rc.26",
+    "@iconify/json": "^2.2.439",
+    "@vuepress/bundler-vite": "2.0.0-rc.26",
+    "@vuepress/plugin-feed": "2.0.0-rc.121",
+    "@waline/client": "^3.9.0",
+    "http-server": "^14.1.1",
+    "swiper": "^12.1.0",
     "typescript": "^5.9.3",
     "vue": "^3.5.28",
-    "vuepress": "^2.0.0-rc.26",
-    "vuepress-theme-plume": "^1.0.0-rc.190"
+    "vuepress": "2.0.0-rc.26",
+    "vuepress-theme-plume": "1.0.0-rc.188",
+    "postprocessing": "^6.38.2",
+    "three": "^0.182.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "esbuild"
+    ]
+  },
+  "engines": {
+    "node": "^20.6.0 || >=22.0.0"
   }
 }
